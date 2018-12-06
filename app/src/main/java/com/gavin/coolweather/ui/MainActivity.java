@@ -1,7 +1,9 @@
-package com.gavin.coolweather;
+package com.gavin.coolweather.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.gavin.coolweather.R;
 
 public class MainActivity extends AppCompatActivity {
 
