@@ -1,5 +1,6 @@
 package com.gavin.coolweather.ui;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -24,6 +25,7 @@ import com.bumptech.glide.Glide;
 import com.gavin.coolweather.R;
 import com.gavin.coolweather.gson.Forecast;
 import com.gavin.coolweather.gson.Weather;
+import com.gavin.coolweather.service.AutoUpdateService;
 import com.gavin.coolweather.util.HttpUtil;
 import com.gavin.coolweather.util.Utility;
 
@@ -234,5 +236,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        // 开启自动更新服务
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
